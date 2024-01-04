@@ -1,0 +1,18 @@
+body {
+    background-color: #202020;
+    color: white;
+}
+
+.bg-black{
+    
+    background: black;
+}
+.bg-black-d{
+    border: 3px solid #fff;
+    background: black;
+}
+.card-project{
+    border: 3px solid #fff;
+    color: white;
+}
+
