@@ -1,20 +1,38 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-black-d">
-    <div class="container">
-      <a class="navbar-brand fw-bold fst-italic" href="/">Projects portfolio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item p-3">
-            <a class="btn btn-light active fw-bold fst-italic rounded-0" aria-current="page" href="{% url 'blog:posts' %}">Portfolio blog</a>
-          </li>
-          <li class="nav-item p-3">
-            <a class="btn btn-light active fw-bold fst-italic rounded-0 " target="_blank">Download CV</a>
-          </li>
-        </ul>
-      </div>
+  <div class="container">
+    <a class="navbar-brand fw-bold fst-italic" href="/">Projects portfolio</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item p-3">
+          <a
+            class="btn btn-light active fw-bold fst-italic rounded-0"
+            aria-current="page"
+            href="{% url 'blog:posts' %}"
+            >Portfolio blog</a
+          >
+        </li>
+        <li class="nav-item p-3">
+          <a
+            href="{% static 'portfolio/FichaDeIdentificacion.pdf' %}"
+            class="btn btn-light active fw-bold fst-italic rounded-0"
+            target="_blank"
+            >Download CV</a
+          >
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
