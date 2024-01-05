@@ -15,7 +15,7 @@
                       <p>{{post.description|striptags|truncatechars:100}}</p>
                       <p>{{post.date|date:'M d Y'|upper}}</p>
                       <p>
-                        <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary">{{post.title}}</a>
+                        <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-light active fw-bold fst-italic ">{{post.title}}</a>
                   </div>
                 </div>
             </div>
