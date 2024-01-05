@@ -8,11 +8,11 @@
             <div class="card card-body bg-black-d">
                 <div class="row">
                   <div class="col-3">
-                      <img src="{{post.imgs.url}}" alt="{{post.title}}" class="img-fluid" width="200"/>
+                      <img src="{{post.imgs.url}}" alt="{{post.title}}" class="img-fluid bg-black-d"/>
                   </div>
                   <div class="col-9">
                       <h2>{{post.title}}</h2>
-                      <h2>{{post.description|striptags|truncatechars:100}}</h2>
+                      <p>{{post.description|striptags|truncatechars:100}}</p>
                       <p>{{post.date|date:'M d Y'|upper}}</p>
                       <p>
                         <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary">{{post.title}}</a>
