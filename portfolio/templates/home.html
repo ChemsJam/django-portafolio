@@ -6,12 +6,21 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-6 my-auto">
-    <h1>I am <strong>Ontiveros Alfaro Johan Alejandro </strong></h1>
-    <h3>I am a Python FullStack Developer.</h3>
+    <h1>Hello my name is</h1>
+    <h1><strong>Johan Alejandro Ontiveros Alfaro</strong></h1>
+    <h3></h3>
     <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
-      temporibus libero hic quas qui ipsum, quisquam accusamus deserunt, magni
-      nisi, error ut amet at fugit vitae adipisci quasi porro. Accusamus?
+      I see myself as a future FullStack developer, and I am focused on learning to apply django in the backend and the use of React in frontend.
+    </p>
+    <p>
+      Some of my technical skills:
+      <ul>
+        <li>Lenguajes: "Spanish: native" and "English: B1".</li>
+        <li>Lenguajes de programación: Java, JavaScritp, Python and PHP</li>
+        <li>Frameworks: Angular and Django</li>
+        <li>DataBases: MySQL, MariaDB and Firebase</li>
+        <li>Im learning: Django, React and Astro</li>
+      </ul>
     </p>
     <a
       href="{% static 'portfolio/FichaDeIdentificacion.pdf' %}"
@@ -22,19 +31,14 @@
 </header>
 
 <div class="row my-4 text-center">
-  <h3>My Projects</h3>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias tempore eaque
-    possimus. Nemo velit quisquam laborum, minus nostrum porro libero culpa at
-    nam, commodi accusantium mollitia maxime tempora aliquid magnam!
-  </p>
-
+  <h3>Some Projects made by me</h3>
+  
   {% for project in projects %}
 
   <div class="col-md-4 p-4">
     <div class="card bg-black card-project">
       <div class="card-body">
-        <img src="{{project.image.url}}" alt="{{project.title}}"class="card-img-fluid img-fluid " width="400"/>
+        <img src="{{project.image.url}}" alt="{{project.title}}"class="card-img-fluid img-fluid bg-black-d" width="400"/>
         <h2>{{project.title}}</h2>
         <p>{{project.description}}</p>
 
