@@ -25,9 +25,6 @@ SECRET_KEY = 'django-insecure-tx4je$4g_kn+h*j3rt#07ftyolqab%6i3ul(8z1b4)fni-s1-v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'my-first-django-project-production.up.railway.app']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -131,3 +128,9 @@ MEDIA_URL = '/public/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'portfolio/static')
+]
+
+ALLOWED_HOSTS = ['127.0.0.1']
