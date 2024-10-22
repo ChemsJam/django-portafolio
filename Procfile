@@ -1,1 +1,1 @@
-web: python manage.py collectstatic && psycopg[binary,pool] &&gunicorn django_portfolio.wsgi
+web: python manage.py collectstatic &&gunicorn django_portfolio.wsgi
