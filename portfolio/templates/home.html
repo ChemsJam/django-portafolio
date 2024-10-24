@@ -24,10 +24,16 @@
         <li>Im learning: Django, React (Vite), Astro, PostgreSQL and SQLServer</li>
       </ul>
     </p>
-    <a
-      href="{% static 'portfolio/CV_OntiverosAlfaroJohanAlejandro.pdf' %}"
-      class="btn btn-primary btn-lg rounded-4 my-3" target="_blank">Download CV</a
-    >
+    <div class="col-md-12">
+
+          <a
+        href="{% static 'portfolio/Spanish_CV_OntiverosAlfaroJohanAlejandro.pdf' %}"
+        class="btn btn-primary btn-lg rounded-4 my-3" target="_blank">Download Spanish CV</a>
+          <a
+        href="{% static 'portfolio/English_CV_OntiverosAlfaroJohanAlejandro.pdf' %}"
+        class="btn btn-primary btn-lg rounded-4 my-3" target="_blank">Download English CV</a>
+
+    </div>
   </div>
 </header>
 
@@ -42,7 +48,12 @@
         <img src="{{project.image.url}}" alt="{{project.title}}"class="card-img-fluid img-fluid bg-black-d" width="400"/>
         <h3>{{project.title}}</h3>
         <p>{{project.description}}</p>
-
+        {% for technology in project.technologies.all %}
+              <li class="list-inline-item">
+                <img src="{{ technology.icon.url }}" alt="{{ technology.name }}" class="tech-icon" width="40" height="40"/>
+                <span>{{ technology.name }}</span>
+              </li>
+            {% endfor %}
         {% if project.url %}
         <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">Look at this project</a>
         {% endif %}
@@ -51,6 +62,35 @@
   </div>
 
   {% endfor %}
+
+  <div class="row my-4 text-center">
+    <h3>My courses and certificates</h3>
+    
+    {% for certificate in certificates %}
+  
+    <div class="col-md-4 p-4">
+      <div class="card bg-black card-project">
+        <div class="card-body">
+          <img src="{{certificate.image.url}}" alt="{{certificate.name}}"class="card-img-fluid img-fluid bg-black-d" width="400"/>
+          <h3>{{certificate.name}}</h3>
+          <p>{{certificate.description}}</p>
+          <ul class="list-inline">
+            {% for technology in certificate.technologies.all %}
+              <li class="list-inline-item">
+                <img src="{{ technology.icon.url }}" alt="{{ technology.name }}" class="tech-icon" width="40" height="40"/>
+                <span>{{ technology.name }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+          <p>{{certificate.date}}</p>
+          {% if certificate.url %}
+            <a href="{{certificate.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">Look at this course</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  
+    {% endfor %}
 </div>
 {% endblock %}
 

@@ -1,4 +1,6 @@
 from django.db import models
+from certificates.models import Technology
+
 from django.db.models.fields import CharField, URLField
 from django.db.models.fields.files import ImageField
 
@@ -7,6 +9,7 @@ from django.db.models.fields.files import ImageField
 class Projects(models.Model):
     title = CharField(max_length=100)
     description = models.TextField()
+    technologies = models.ManyToManyField(Technology, related_name="all_technologies_projects")
     image = ImageField(upload_to='portfolio/images')
     url = URLField(blank=True)
 
