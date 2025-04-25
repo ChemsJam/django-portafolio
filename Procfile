@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput--noinput &&gunicorn django_portfolio.wsgi
+web: python manage.py collectstatic --noinput &&gunicorn django_portfolio.wsgi
