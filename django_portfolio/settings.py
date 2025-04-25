@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    #'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-    'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': 'django_portfolio',
-                'USER': 'postgres',
-                'PASSWORD': 'Soyjohan123.',
-                'HOST': 'localhost',
-                'PORT': '5432'
-            }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    #'default': {
+    #            'ENGINE': 'django.db.backends.postgresql',
+    #            'NAME': 'django_portfolio',
+    #            'USER': 'postgres',
+    #            'PASSWORD': 'Soyjohan123.',
+    #            'HOST': 'localhost',
+    #            'PORT': '5432'
+    #        }
 }
 
 
