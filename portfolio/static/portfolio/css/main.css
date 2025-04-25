@@ -1,0 +1,233 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #660099; /* Fondo principal */
+    color: #99ddff; /* Texto principal */
+}
+
+h2, h3 {
+    color: #00b7ff; /* Títulos vibrantes */
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: inherit;
+} 
+
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+    transition: 1s;   
+    background-color: #99ddff; /* Fondo de la introducción */
+    color: #660099; /* Texto claro */
+    text-align: center;
+    padding: 2rem;
+}
+
+.intro img {
+    width: 150px;
+    margin-bottom: 1rem;
+}
+
+.intro h1 {
+    color: #00b7ff; /* Títulos vibrantes */
+}
+
+.intro p {
+    color: #99ddff; /* Texto claro */
+}
+
+.container {
+    background-color: #99ddff; /* Fondo claro */
+    color: #660099; /* Texto oscuro */
+    padding: 1rem;
+    padding-bottom: 0px;
+    border-radius: 15px;
+}
+
+.container h2 {
+    color: #00b7ff; /* Títulos vibrantes */
+}
+
+.container p {
+    color: #660099; /* Texto oscuro */
+}
+
+.log {
+    font-size: 2.5rem;
+    color: white;    
+}
+
+.logo-parts {
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo-parts.active {
+    bottom: 0;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.logo-parts.fade {
+    bottom: 250px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.content {
+    width: 100%;
+    padding: 50px;
+    font-size: 2rem;
+}
+
+body {
+    background-color: #07182e; /* Fondo principal */
+    color: #edfaff; /* Texto principal */
+}
+
+footer {
+    background-color: #99ddff; /* Fondo del footer */
+    color: #660099; /* Texto claro */
+    text-align: center;
+    padding: 1rem;
+}
+
+.menu li a{
+    color: #088bff; /* Enlaces del menú */
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: #4ac8ff; /* Hover en enlaces */
+}
+
+.me {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 200px;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos internos se apilen verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    overflow: hidden;
+    border-radius: 20px;
+    z-index: 1; /* Asegura que el contenido principal esté encima */
+    padding: 0px;
+    margin: 0;
+    background-color: #99ddff; /* Fondo de las cartas */
+    border: 2px solid #00b7ff; /* Bordes vibrantes */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.card img {
+    position: relative; /* Asegura que estos elementos no sean afectados por los pseudo-elementos */
+    z-index: 2; /* Coloca estos elementos encima de los pseudo-elementos */
+    margin: 0; /* Elimina cualquier margen alrededor de la imagen */
+    padding: 5px; /* Elimina cualquier relleno alrededor de la imagen */
+    width: 80%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Evita espacios adicionales causados por imágenes inline */
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    color: #660099; /* Títulos oscuros */
+}
+
+.card p {
+    color: #660099; /* Texto oscuro */
+}
+
+.card a {
+    background-color: #20a9ff; /* Fondo del botón */
+    color: #edfaff; /* Texto claro */
+    border: 1px solid #0273f3; /* Borde */
+}
+
+.card a:hover {
+    background-color: #0273f3; /* Hover */
+    color: #d6f1ff; /* Texto más claro */
+}
+
+.card p {
+    position: relative; /* Asegura que estos elementos no sean afectados por los pseudo-elementos */
+    z-index: 2; /* Coloca estos elementos encima de los pseudo-elementos */
+    color: black;
+    text-align: center;
+}
+
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    background-image: linear-gradient(180deg, #640564, #ff30ff); /* Colores brillantes */
+    height: 150%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    z-index: 0; /* Asegura que este pseudo-elemento esté detrás del contenido */
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    background: #07182E;
+    inset: 5px;
+    border-radius: 15px;
+    z-index: 1; /* Asegura que este pseudo-elemento esté detrás del contenido pero encima del ::before */
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn {
+    background-color: #00b7ff; /* Fondo del botón */
+    color: #99ddff; /* Texto claro */
+    border: 1px solid #8073ff; /* Borde */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #8073ff; /* Hover */
+    color: #ff30ff; /* Texto más claro */
+}
