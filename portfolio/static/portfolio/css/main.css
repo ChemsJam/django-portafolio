@@ -1,17 +1,10 @@
+/* General Reset */
 html {
     box-sizing: border-box;
-    font-size: 62.5%;
+    font-size: 62.5%; /* Escala base para usar rem */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-body {
-    background-color: #660099; /* Fondo principal */
-    color: #99ddff; /* Texto principal */
-}
-
-h2, h3 {
-    color: #00b7ff; /* Títulos vibrantes */
-}
 *,
 *::after,
 *::before {
@@ -19,20 +12,33 @@ h2, h3 {
     padding: 0;
     font-family: inherit;
     box-sizing: inherit;
-} 
+}
 
+/* Body */
+body {
+    background-color: #07182e; /* Fondo principal */
+    color: #edfaff; /* Texto principal */
+}
+
+/* Títulos */
+h2, h3 {
+    color: #00b7ff; /* Títulos vibrantes */
+    z-index: 2;
+}
+
+/* Introducción */
 .intro {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;    
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     z-index: 10;
-    transition: 1s;   
+    transition: 1s;
     background-color: #99ddff; /* Fondo de la introducción */
     color: #660099; /* Texto claro */
     text-align: center;
@@ -52,12 +58,19 @@ h2, h3 {
     color: #99ddff; /* Texto claro */
 }
 
+/* Contenedor principal */
 .container {
     background-color: #99ddff; /* Fondo claro */
     color: #660099; /* Texto oscuro */
-    padding: 1rem;
-    padding-bottom: 0px;
+    padding: 2rem;
     border-radius: 15px;
+}
+
+.cards-row {
+    display: flex; /* Convierte el contenedor en un contenedor flex */
+    flex-wrap: wrap; /* Permite que las cartas se ajusten a una nueva línea si no caben */
+    justify-content: center; /* Centra las cartas horizontalmente */
+    gap: 2rem; /* Espaciado entre las cartas */
 }
 
 .container h2 {
@@ -68,11 +81,7 @@ h2, h3 {
     color: #660099; /* Texto oscuro */
 }
 
-.log {
-    font-size: 2.5rem;
-    color: white;    
-}
-
+/* Logo Animado */
 .logo-parts {
     position: relative;
     display: inline-block;
@@ -84,35 +93,23 @@ h2, h3 {
     bottom: 0;
     opacity: 1;
     transition: all 0.3s ease-in-out;
-
 }
 
 .logo-parts.fade {
     bottom: 250px;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-
 }
 
-.content {
-    width: 100%;
-    padding: 50px;
-    font-size: 2rem;
-}
-
-body {
-    background-color: #07182e; /* Fondo principal */
-    color: #edfaff; /* Texto principal */
-}
-
+/* Footer */
 footer {
-    background-color: #99ddff; /* Fondo del footer */
-    color: #660099; /* Texto claro */
+    background-color: #07182e; /* Fondo oscuro */
+    color: #088bff; /* Texto claro */
     text-align: center;
     padding: 1rem;
 }
 
-.menu li a{
+.menu li a {
     color: #088bff; /* Enlaces del menú */
     text-decoration: none;
 }
@@ -121,83 +118,75 @@ footer {
     color: #4ac8ff; /* Hover en enlaces */
 }
 
-.me {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
-    width: 200px;
-}
-
+/* Cartas */
 .card {
-    width: 300px;
-    height: 500px;
+    width: 100%;
+    height: auto;
     position: relative;
     display: flex;
-    flex-direction: column; /* Asegura que los elementos internos se apilen verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     border-radius: 20px;
-    z-index: 1; /* Asegura que el contenido principal esté encima */
-    padding: 0px;
+    padding: 1rem;
     margin: 0;
     background-color: #99ddff; /* Fondo de las cartas */
     border: 2px solid #00b7ff; /* Bordes vibrantes */
-    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 1rem;
 }
 
 .card img {
-    position: relative; /* Asegura que estos elementos no sean afectados por los pseudo-elementos */
-    z-index: 2; /* Coloca estos elementos encima de los pseudo-elementos */
-    margin: 0; /* Elimina cualquier margen alrededor de la imagen */
-    padding: 5px; /* Elimina cualquier relleno alrededor de la imagen */
-    width: 80%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Evita espacios adicionales causados por imágenes inline */
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 5px;
+    width: 80%;
+    height: auto;
+    display: block;
     border-radius: 10px;
     margin-bottom: 1rem;
 }
 
 .card h2 {
-    color: #660099; /* Títulos oscuros */
+    color: #99ddff; /* Títulos oscuros */
 }
 
 .card p {
-    color: #660099; /* Texto oscuro */
-}
-
-.card a {
-    background-color: #20a9ff; /* Fondo del botón */
-    color: #edfaff; /* Texto claro */
-    border: 1px solid #0273f3; /* Borde */
-}
-
-.card a:hover {
-    background-color: #0273f3; /* Hover */
-    color: #d6f1ff; /* Texto más claro */
-}
-
-.card p {
-    position: relative; /* Asegura que estos elementos no sean afectados por los pseudo-elementos */
-    z-index: 2; /* Coloca estos elementos encima de los pseudo-elementos */
-    color: black;
+    position: relative;
+    z-index: 2;
+    color: #99ddff; /* Texto oscuro */
     text-align: center;
 }
 
+/* Botones */
+.card a,
+.btn {
+    background-color: #00b7ff; /* Fondo del botón */
+    color: #99ddff; /* Texto claro */
+    border: 1px solid #8073ff; /* Borde */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 2;
+}
 
+.card a:hover,
+.btn:hover {
+    background-color: #8073ff; /* Hover */
+    color: #ff30ff; /* Texto más claro */
+}
+
+/* Animaciones de las cartas */
 .card::before {
     content: '';
     position: absolute;
     width: 150px;
-    background-image: linear-gradient(180deg, #640564, #ff30ff); /* Colores brillantes */
     height: 150%;
+    background-image: linear-gradient(180deg, #640564, #ff30ff); /* Colores brillantes */
     animation: rotBGimg 3s linear infinite;
     transition: all 0.2s linear;
-    z-index: 0; /* Asegura que este pseudo-elemento esté detrás del contenido */
+    z-index: 0;
 }
 
 .card::after {
@@ -206,9 +195,53 @@ footer {
     background: #07182E;
     inset: 5px;
     border-radius: 15px;
-    z-index: 1; /* Asegura que este pseudo-elemento esté detrás del contenido pero encima del ::before */
+    z-index: 1;
 }
 
+/* Iconos dentro de las cartas */
+.container div div li img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    display: flex; /* Organiza los elementos en fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a una nueva línea si no caben */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    padding: 0;
+    list-style: none; /* Elimina los puntos de la lista */
+    margin: 0;
+}
+
+/* Estilo para cada tecnología */
+.card li {
+    display: flex;
+    flex-direction: column; /* Coloca el icono y el texto en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+    margin: 1rem; /* Espaciado entre las tecnologías */
+    text-align: center; /* Centra el texto debajo del icono */
+    width: auto; /* Asegura que no ocupen toda la fila */
+}
+
+/* Estilo para los iconos */
+.card li img {
+    width: 50px; /* Tamaño del icono */
+    height: 50px;
+    margin-bottom: 0.5rem; /* Espaciado entre el icono y el texto */
+}
+
+.card li span {
+    position: relative;
+    z-index: 2;
+    color: #4ac8ff; /* Texto oscuro */
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Keyframes */
 @keyframes rotBGimg {
     from {
         transform: rotate(0deg);
@@ -218,16 +251,41 @@ footer {
     }
 }
 
-.btn {
-    background-color: #00b7ff; /* Fondo del botón */
-    color: #99ddff; /* Texto claro */
-    border: 1px solid #8073ff; /* Borde */
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
+.social-icons {
+    display: flex; /* Organiza los elementos en fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a una nueva línea si no caben */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 2rem; /* Espaciado entre los iconos */
 }
 
-.btn:hover {
-    background-color: #8073ff; /* Hover */
-    color: #ff30ff; /* Texto más claro */
+.social-item {
+    display: flex; /* Convierte el contenedor en un contenedor flex */
+    flex-direction: column; /* Organiza el icono y el texto en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center; /* Centra el texto */
+}
+
+.social-item a {
+    margin: 0 10px; /* Espaciado entre los iconos */
+    display: inline-block;
+}
+
+.social-item img {
+    filter: invert(64%) sepia(20%) saturate(500%) hue-rotate(180deg) brightness(100%) contrast(90%);
+    /* Cambia el filtro para que el color base sea #00b7ff */
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(100%) contrast(100%);
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animación al pasar el cursor */
+}
+
+.social-item img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el cursor */
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(300deg) brightness(120%) contrast(100%);
+}
+
+.social-item span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #00b7ff; /* Color del texto */
+    text-align: center;
 }

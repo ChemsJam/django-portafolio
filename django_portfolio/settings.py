@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'blog',
     'portfolio',
-    'certificates'
+    'certificates',
+    'workexpirence',
 ]
 
 MIDDLEWARE = [

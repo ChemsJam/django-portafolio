@@ -21,10 +21,10 @@
   <h2>Portfolio...</h2>
 </div>
 <div class="container p-4">
-  <header class="row">
+  <header class="row" id="header">
     <div class="col-md-3">
       <center>
-        <img src="{% static 'portfolio/img/ChibyJBordered.png' %}" alt="Profile Image" class="img-fluid rounded-circle me"/>
+        <img src="{% static 'portfolio/img/JohanHarman.jpeg' %}" alt="Profile Image" class="img-fluid rounded-circle me"/>
       </center>
     </div>
     <div class="col-md-9">
@@ -58,31 +58,67 @@
     </div>
   </header>
 </div>
+
 <div class="container p-4 my-4 text-center">
-  <h3>Some Projects made by me</h3>
-  {% for project in projects %}
-  <div class="col-md-4 p-4">
-    <div class="card">
-    <h2>{{project.title}}</h2>
-      <img src="{{project.image.url}}" alt="{{project.title}}"class="card-img-fluid img-fluid"/>
-      
-      <p>{{project.description}}</p>
-      {% for technology in project.technologies.all %}
-            <li class="list-inline-item">
-              <img src="{{ technology.icon.url }}" alt="{{ technology.name }}" class="tech-icon" width="40px" height="40px"/>
-              <span>{{ technology.name }}</span>
-            </li>
-          {% endfor %}
-      {% if project.url %}
-      <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">Look at this project</a>
-      {% endif %}
+  <div class="row my-4 text-center cards-row">
+    <h3>Work experience</h3>
+    {% for experience in workexpirence %}
+    <div class="col-md-4 p-4">
+      <div class="card">
+      <h2>{{experience.title}}</h2>
+        <img src="{{experience.image.url}}" alt="{{experience.title}}"class="card-img-fluid img-fluid"/>
+        <p>{{experience.description}}</p>
+        <ul>
+        {% for technology in experience.technologies.all %}
+          <li class="list-inline-item">
+            <img src="{{ technology.icon.url }}" alt="{{ technology.name }}" class="tech-icon"/>
+          <center>
+            <span>{{ technology.name }}</span>
+          </center>
+          </li>
+        {% endfor %}
+        </ul>
+        {% if experience.location %}
+          <a href="{{experience.location}}" class="btn" target="_blank">Look at this project</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+<div class="container p-4 my-4 text-center">
+  <div class="row my-4 text-center cards-row">
+    <h3>Some Projects made by me</h3>
+    {% for project in projects %}
+    <div class="col-md-4 p-4">
+      <div class="card">
+      <h2>{{project.title}}</h2>
+        <img src="{{project.image.url}}" alt="{{project.title}}"class="card-img-fluid img-fluid"/>
+        
+        <p>{{project.description}}</p>
+        <ul>
+        {% for technology in project.technologies.all %}
+          <li class="list-inline-item">
+            <img src="{{ technology.icon.url }}" alt="{{ technology.name }}" class="tech-icon"/>
+          <center>
+            <span>{{ technology.name }}</span>
+          </center>
+          </li>
+        {% endfor %}
+        </ul>
+        {% if project.url %}
+          <a href="{{project.url}}" class="btn" target="_blank">Look at this project</a>
+        {% endif %}
+      </div>
     </div>
   </div>
 
   {% endfor %}
 </div>
 <div class="container p-4">
-  <div class="row my-4 text-center">
+  <div class="row my-4 text-center cards-row">
     <h3>My courses and certificates</h3>
     {% for certificate in certificates %}
     <div class="col-md-4 p-4">
@@ -108,6 +144,6 @@
     {% endfor %}
   </div>
 </div>
-<hr/>
+<br>
 {% endblock %}
 
