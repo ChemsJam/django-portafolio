@@ -62,8 +62,22 @@ h2, h3 {
 .container {
     background-color: #99ddff; /* Fondo claro */
     color: #660099; /* Texto oscuro */
-    padding: 2rem;
     border-radius: 15px;
+}
+
+.row,
+.row h1,
+.row h2, 
+.row h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;   
+    margin-left: 40px; /* Espaciado a la izquierda */
+    margin-right: 40px; /* Espaciado a la derecha */
+    color: #640564;
+}
+
+.row ul li {
+    font-size: 16px; /* Tamaño de fuente más pequeño */
 }
 
 .cards-row {
@@ -106,7 +120,7 @@ footer {
     background-color: #07182e; /* Fondo oscuro */
     color: #088bff; /* Texto claro */
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .menu li a {
@@ -169,6 +183,8 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     z-index: 2;
+    margin-top: 20px; /* Espaciado superior */
+    margin-bottom: 20px; /* Espaciado inferior */
 }
 
 .card a:hover,
@@ -181,10 +197,10 @@ footer {
 .card::before {
     content: '';
     position: absolute;
-    width: 150px;
+    width: 200px;
     height: 150%;
     background-image: linear-gradient(180deg, #640564, #ff30ff); /* Colores brillantes */
-    animation: rotBGimg 3s linear infinite;
+    animation: rotBGimg 8s linear infinite;
     transition: all 0.2s linear;
     z-index: 0;
 }

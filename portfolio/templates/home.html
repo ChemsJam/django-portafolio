@@ -21,30 +21,25 @@
   <h2>Portfolio...</h2>
 </div>
 <div class="container p-4">
-  <header class="row" id="header">
+  <header class="row">
     <div class="col-md-3">
       <center>
         <img src="{% static 'portfolio/img/JohanHarman.jpeg' %}" alt="Profile Image" class="img-fluid rounded-circle me"/>
       </center>
     </div>
     <div class="col-md-9">
-      <h2>Hello my name is</h2>
-      <h2><strong>Johan Alejandro Ontiveros Alfaro</strong></h2>
-      <h3></h3>
-      <p>
-        I see myself as a future FullStack developer, and I am focused on learning to apply django in the backend and the use of React in frontend.
-      </p>
-      <p>
-        <strong>Some of my technical skills:</strong>
-        <ul>
-          <li>Lenguajes: "Spanish: native" and "English: B1".</li>
-          <li>Programming languages: JavaScript, Python and PHP</li>
-          <li>Frameworks: Django and Symfony</li>
-          <li>Libraries: React, JQuery, ChartJS</li>
-          <li>DataBases: MySQL, MariaDB, firebase and SQLServer</li>
-          <li>Im learning: Django, React (Vite), Astro, PostgreSQL and SQLServer</li>
-        </ul>
-      </p>
+      <h1>Hello my name is</h1>
+      <h1><strong>Johan Alejandro Ontiveros Alfaro</strong></h1>
+      <h3>I see myself as a future FullStack developer, and I am focused on learning to apply django in the backend and the use of React in frontend.</h3>
+      <h3><strong>Some of my technical skills:</strong></h3>  
+      <ul class="skills">
+        <li>Lenguajes: "Spanish: native" and "English: B1".</li>
+        <li>Programming languages: JavaScript, Python and PHP</li>
+        <li>Frameworks: Django and Symfony</li>
+        <li>Libraries: React, JQuery, ChartJS</li>
+        <li>DataBases: MySQL, MariaDB, firebase and SQLServer</li>
+        <li>Im learning: Django, React (Vite), Astro, PostgreSQL and SQLServer</li>
+      </ul>
     </div>
     <div class="col-md-12">   
          <center>
@@ -65,6 +60,12 @@
     {% for experience in workexpirence %}
     <div class="col-md-4 p-4">
       <div class="card">
+        <h3>{{experience.initial_date}} - 
+            {% if experience.location %} 
+            {{experience.final_date}}
+            {% else %} Current. 
+            {% endif %}
+        </h3>
       <h2>{{experience.title}}</h2>
         <img src="{{experience.image.url}}" alt="{{experience.title}}"class="card-img-fluid img-fluid"/>
         <p>{{experience.description}}</p>
@@ -123,8 +124,8 @@
     {% for certificate in certificates %}
     <div class="col-md-4 p-4">
       <div class="card">
+        <h2>{{certificate.name}}</h2>
         <img src="{{certificate.image.url}}" alt="{{certificate.name}}"class="card-img-fluid img-fluid" width="400"/>
-        <h3>{{certificate.name}}</h3>
         <p>{{certificate.description}}</p>
         <ul class="list-inline">
           {% for technology in certificate.technologies.all %}
