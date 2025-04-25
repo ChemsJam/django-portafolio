@@ -23,7 +23,7 @@ body {
 /* Títulos */
 h2, h3 {
     color: #00b7ff; /* Títulos vibrantes */
-    z-index: 2;
+    z-index: 3;
 }
 
 /* Introducción */
@@ -63,6 +63,8 @@ h2, h3 {
     background-color: #99ddff; /* Fondo claro */
     color: #660099; /* Texto oscuro */
     border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .row,
@@ -152,14 +154,15 @@ footer {
 
 .card img {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     margin: 0;
     padding: 5px;
-    width: 80%;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 10px;
     margin-bottom: 1rem;
+    max-height: 180px;
 }
 
 .card h2 {
@@ -168,7 +171,7 @@ footer {
 
 .card p {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     color: #99ddff; /* Texto oscuro */
     text-align: center;
 }
@@ -177,14 +180,18 @@ footer {
 .card a,
 .btn {
     background-color: #00b7ff; /* Fondo del botón */
-    color: #99ddff; /* Texto claro */
+    color: #640564; /* Texto claro */
     border: 1px solid #8073ff; /* Borde */
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
-    z-index: 2;
+    z-index: 3; /* Asegura que el botón esté por encima de la animación */
     margin-top: 20px; /* Espaciado superior */
     margin-bottom: 20px; /* Espaciado inferior */
+    margin-left: 20px; /* Espaciado a la izquierda */
+    margin-right: 20px; /* Espaciado a la derecha */
+    padding-left: 10px; /* Espaciado a la izquierda */
+    padding-right: 10px; /* Espaciado a la derecha */
 }
 
 .card a:hover,
@@ -202,7 +209,12 @@ footer {
     background-image: linear-gradient(180deg, #640564, #ff30ff); /* Colores brillantes */
     animation: rotBGimg 8s linear infinite;
     transition: all 0.2s linear;
-    z-index: 0;
+    z-index: 1; /* Asegura que esté detrás del contenido principal */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;;
 }
 
 .card::after {
@@ -211,13 +223,13 @@ footer {
     background: #07182E;
     inset: 5px;
     border-radius: 15px;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Iconos dentro de las cartas */
 .container div div li img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     margin-bottom: 1rem;
 }
 
@@ -242,19 +254,20 @@ footer {
 
 /* Estilo para los iconos */
 .card li img {
-    width: 50px; /* Tamaño del icono */
-    height: 50px;
+    width: 36px; /* Tamaño del icono */
+    height: 36px;
     margin-bottom: 0.5rem; /* Espaciado entre el icono y el texto */
 }
 
 .card li span {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     color: #4ac8ff; /* Texto oscuro */
     text-decoration: none;
     display: block;
     align-items: center;
     margin-bottom: 1rem;
+    font-size: 12px;
 }
 
 /* Keyframes */
@@ -305,3 +318,52 @@ footer {
     color: #00b7ff; /* Color del texto */
     text-align: center;
 }
+
+.flip-card {
+    perspective: 1000px;
+    width: 100%; /* Ancho responsivo */
+    max-width: 600px; /* Ancho máximo */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin: auto;
+}
+  
+  /* El que gira */
+  .card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 450px; /* Altura mínima para evitar que se colapse */
+    height: auto; /* Ajusta la altura según el contenido */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    z-index: 3;
+}
+  
+  /* Al hacer hover, gira 180° */
+  .flip-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Caras del card */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera cuando no está visible */
+    border-radius: 20px;
+    z-index: 4; /* Asegura que las caras estén por encima de la animación */
+  }
+  
+  /* Frente: z-index superior */
+  .card-front {
+    background-color: #00b7ff;
+    z-index: 2;
+  }
+  
+  /* Reverso: gira 180° y queda oculto inicialmente */
+  .card-back {
+    background-color: #00b7ff;
+    color: #edfaff;
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
