@@ -1,27 +1,22 @@
 {% extends "layout.html" %} {% block content %}
-<h1>Post</h1>
-
-{% for post in posts %}
-
-    
-        <div class="p-3">
-            <div class="card card-body bg-black-d">
-                <div class="row">
-                  <div class="col-3">
-                      <img src="{{post.imgs.url}}" alt="{{post.title}}" class="img-fluid bg-black-d"/>
-                  </div>
-                  <div class="col-9">
-                      <h2>{{post.title}}</h2>
-                      <p>{{post.description|striptags|truncatechars:100}}</p>
-                      <p>{{post.date|date:'M d Y'|upper}}</p>
-                      <p>
-                        <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-light active fw-bold fst-italic ">{{post.title}}</a>
-                  </div>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-  </p>
-
-
+<div class="container p-4 my-4 text-center fst-italic">
+  <div class="row my-4 text-center cards-row">
+    <h1>Posts</h1>
+    {% for post in posts %}
+    <div class="col-md-4 p-4 mx-4 my-4 card-container">
+      <div class="card-inner">
+        <h3>{{post.date|date:'M d Y'|upper}}</h3>
+        <div class="card-front card">
+          <h2>{{post.title}}</h2>
+          <img src="{{post.imgs.url}}" alt="{{post.title}}" class=""/>
+          <p>{{post.description|striptags|truncatechars:100}}</p>
+          <a href="{% url 'blog:post_detail' post.id %}" 
+          class="btn btn-light btn-sm fw-bold fst-italic">
+          {{post.title}}</a>
+        </div>   
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
 {% endblock %}

@@ -22,7 +22,7 @@ body {
 
 /* Títulos */
 h2, h3 {
-    color: #00b7ff; /* Títulos vibrantes */
+    color: #640564; /* Títulos vibrantes */
     z-index: 3;
 }
 
@@ -103,6 +103,7 @@ h2, h3 {
     display: inline-block;
     bottom: -20px;
     opacity: 0;
+    color: #640564
 }
 
 .logo-parts.active {
@@ -138,7 +139,7 @@ footer {
 .card {
     width: 100%;
     height: auto;
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,15 +155,16 @@ footer {
 
 .card img {
     position: relative;
-    z-index: 3;
-    margin: 0;
+    z-index: 5;
+    margin: 20px;
     padding: 5px;
-    width: 100%;
+    width: 90%;
     height: auto;
     display: block;
     border-radius: 10px;
     margin-bottom: 1rem;
-    max-height: 180px;
+    max-height: 100%;
+    filter: none !important; /* Elimina cualquier filtro aplicado por Opera GX */
 }
 
 .card h2 {
@@ -205,7 +207,7 @@ footer {
     content: '';
     position: absolute;
     width: 200px;
-    height: 150%;
+    height: 250%;
     background-image: linear-gradient(180deg, #640564, #ff30ff); /* Colores brillantes */
     animation: rotBGimg 8s linear infinite;
     transition: all 0.2s linear;
@@ -247,7 +249,7 @@ footer {
     display: flex;
     flex-direction: column; /* Coloca el icono y el texto en columna */
     align-items: center; /* Centra el contenido horizontalmente */
-    margin: 1rem; /* Espaciado entre las tecnologías */
+    margin: 0rem; /* Espaciado entre las tecnologías */
     text-align: center; /* Centra el texto debajo del icono */
     width: auto; /* Asegura que no ocupen toda la fila */
 }

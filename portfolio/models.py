@@ -12,4 +12,5 @@ class Projects(models.Model):
     technologies = models.ManyToManyField(Technology, related_name="all_technologies_projects")
     image = ImageField(upload_to='portfolio/images')
     url = URLField(blank=True)
+    isPortfolio = models.BooleanField(default=False)
 

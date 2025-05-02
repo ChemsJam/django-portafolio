@@ -1,6 +1,6 @@
 {% extends "layout.html" %} {% block content %} {% load static %}
 
-<div class="intro">
+<div class="intro fst-italic">
   <img src="{% static 'portfolio/img/ChibyJNoBorders.png' %}" alt="Intro Image"/>
   <h1 class="logo">
     <span class="logo-parts">J</span>
@@ -20,7 +20,7 @@
   <h2>FullStack Developer</h2>
   <h2>Portfolio...</h2>
 </div>
-<div class="container p-4">
+<div class="container  fst-italic">
   <header class="row">
     <div class="col-md-3">
       <center>
@@ -47,10 +47,10 @@
             <center>
             <a
             href="{% static 'portfolio/Spanish_CV_OntiverosAlfaroJohanAlejandro.pdf' %}"
-            class="btn" target="_blank">Download Spanish CV</a>
+            class="btn btn-light  btn-sm fw-bold fst-italic" target="_blank">Download Spanish CV</a>
               <a
             href="{% static 'portfolio/English_CV_OntiverosAlfaroJohanAlejandro.pdf' %}"
-            class="btn" target="_blank">Download English CV</a>
+            class="btn btn-light  btn-sm fw-bold fst-italic" target="_blank">Download English CV</a>
           </center>
         </div>
       </div>
@@ -59,23 +59,24 @@
   </header>
 </div>
 
-<div class="container p-4 my-4 text-center">
+<div class="container  my-4 text-center fst-italic">
   <div class="row my-4 text-center cards-row">
     <h3>Work experience</h3>
     {% for experience in workexpirence %}
-    <div class="col-md-4 p-4">
+    <div class="col-md-4 ">
       <div class="flip-card">
+        <h3>{{ experience.initial_date }} – {% if experience.final_date %}{{ experience.final_date }}{% else %}Current{% endif %}</h3>
+            
         <div class="card-inner">
           <!-- Frente -->
           <div class="card-front card">
-            <h3>{{ experience.initial_date }} – {% if experience.final_date %}{{ experience.final_date }}{% else %}Current{% endif %}</h3>
             <h2>{{ experience.title }}</h2>
             <img src="{{ experience.image.url }}" alt="{{ experience.title }}" class="card-img-fluid"/>
             <p>{{ experience.description }}</p>
           </div>
           <!-- Reverso -->
           <div class="card-back card">
-            <h2>technologys</h2>
+            <h2>Technologies</h2>
             <ul>
               {% for tech in experience.technologies.all %}
               <li>
@@ -85,7 +86,7 @@
               {% endfor %}
             </ul>
             {% if experience.location %}
-              <a href="{{ experience.location }}" class="btn" target="_blank">Look at this project</a>
+              <a href="{{ experience.location }}" class="btn btn-light  btn-sm fw-bold fst-italic" target="_blank">Look at this project</a>
             {% endif %}
           </div>
         </div>
@@ -95,53 +96,99 @@
   </div>
 </div>
 
-<div class="container p-4 my-4 text-center">
+<div class="container  my-4 text-center fst-italic">
   <div class="row my-4 cards-row">
     <h3>Some Projects made by me</h3>
     {% for project in projects %}
-      <div class="col-md-4 p-4">
-        <div class="flip-card">
-          <div class="card-inner">
-            <!-- Frente -->
-            <div class="card-front card">
-              <h2>{{ project.title }}</h2>
-              <img src="{{ project.image.url }}"
-                   alt="{{ project.title }}"
-                   class="card-img-fluid img-fluid"/>
-              <p>{{ project.description|truncatechars:100 }}</p>
-            </div>
-            <!-- Reverso -->
-            <div class="card-back card">
-              <h2>technologys</h2>
-              <ul class="list-inline">
-                {% for tech in project.technologies.all %}
-                  <li class="list-inline-item">
-                    <img src="{{ tech.icon.url }}"
-                         alt="{{ tech.name }}"
-                         class="tech-icon"/>
-                    <span>{{ tech.name }}</span>
-                  </li>
-                {% endfor %}
-              </ul>
-              {% if project.url %}
-                <a href="{{ project.url }}"
-                   class="btn"
-                   target="_blank">Look at this project</a>
-              {% endif %}
+      {% if project.isPortfolio == False %}
+        <div class="col-md-4 ">
+          <div class="flip-card">
+            <div class="card-inner">
+              <!-- Frente -->
+              <div class="card-front card">
+                <h2>{{ project.title }}</h2>
+                <img src="{{ project.image.url }}"
+                    alt="{{ project.title }}"
+                    class="card-img-fluid img-fluid"/>
+                <p>{{ project.description }}</p>
+              </div>
+              <!-- Reverso -->
+              <div class="card-back card">
+                <h2>Technologies</h2>
+                <ul class="list-inline">
+                  {% for tech in project.technologies.all %}
+                    <li class="list-inline-item">
+                      <img src="{{ tech.icon.url }}"
+                          alt="{{ tech.name }}"
+                          class="tech-icon"/>
+                      <span>{{ tech.name }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% if project.url %}
+                  <a href="{{ project.url }}"
+                    class="btn btn-light  btn-sm fw-bold fst-italic"
+                    target="_blank">Look at this project</a>
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>
 
-<div class="container p-4 my-4 text-center">
+<div class="container  my-4 text-center fst-italic">
+  <div class="row my-4 cards-row">
+    <h3>Customized/designed portfolios by me</h3>
+    {% for project in projects %}
+      {% if project.isPortfolio == True %}
+      <div class="col-md-4 ">
+          <div class="flip-card">
+            <div class="card-inner">
+              <!-- Frente -->
+              <div class="card-front card">
+                <h2>{{ project.title }}</h2>
+                <img src="{{ project.image.url }}"
+                    alt="{{ project.title }}"
+                    class="card-img-fluid img-fluid"/>
+              </div>
+              <!-- Reverso -->
+              <div class="card-back card">
+                <p>{{ project.description }}</p>
+                <h2>Technologies</h2>
+                <ul class="list-inline">
+                  {% for tech in project.technologies.all %}
+                    <li class="list-inline-item">
+                      <img src="{{ tech.icon.url }}"
+                          alt="{{ tech.name }}"
+                          class="tech-icon"/>
+                      <span>{{ tech.name }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+                {% if project.url %}
+                  <a href="{{ project.url }}"
+                    class="btn btn-light  btn-sm fw-bold fst-italic"
+                    target="_blank">Look at this project</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container  my-4 text-center fst-italic">
   <div class="row my-4 cards-row">
     <h3>My courses and certificates</h3>
     {% for cert in certificates %}
-      <div class="col-md-4 p-4">
+      <div class="col-md-4 ">
         <div class="flip-card">
+          <h3>{{ cert.date }}</h3>
           <div class="card-inner">
             <!-- Frente -->
             <div class="card-front card">
@@ -150,11 +197,11 @@
                    alt="{{ cert.name }}"
                    class="card-img-fluid img-fluid"
                    width="400"/>
-              <p>{{ cert.description|truncatechars:100 }}</p>
             </div>
             <!-- Reverso -->
             <div class="card-back card">
-              <h2>Technologys</h2>
+              <p>{{ cert.description }}</p>
+              <h2>Technologies</h2>
               <ul class="list-inline">
                 {% for tech in cert.technologies.all %}
                   <li class="list-inline-item">
@@ -165,11 +212,13 @@
                     <span>{{ tech.name }}</span>
                   </li>
                 {% endfor %}
+                
+
               </ul>
-              <p>{{ cert.date }}</p>
+              
               {% if cert.url %}
                 <a href="{{ cert.url }}"
-                   class="btn btn-light rounded-0 btn-sm"
+                   class="btn btn-light btn-sm fw-bold fst-italic"
                    target="_blank">Look at this course</a>
               {% endif %}
             </div>
