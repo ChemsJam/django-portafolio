@@ -156,13 +156,13 @@ footer {
 .card img {
     position: relative;
     z-index: 5;
-    margin: 20px;
-    padding: 5px;
-    width: 90%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     max-height: 100%;
     filter: none !important; /* Elimina cualquier filtro aplicado por Opera GX */
 }

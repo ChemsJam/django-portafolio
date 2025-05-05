@@ -1,32 +1,34 @@
 {% extends "layout.html" %} {% block content %}
 
 <div class="container  my-4 text-center fst-italic">
-  <h3>{{post.date|date:'F jS Y'}}</h3> 
   <div class="row my-4 text-center cards-row">
-    <h2>{{post.title}}</h2>
-    <div class="col-md-8 ">
-      <div class="card-inner">
-        <div class="card-front card">
-            <img src="{{post.imgs.url}}" alt="{{post.title}}" class="img-fluid"/>   
-        </div>
-      </div>
-    <h3>{{post.description|safe}}</h3>
-    </div>
-  </div>
-
-  {% for image in post.images.all %}
-  <div class="container  my-4 text-center fst-italic">
+  <h3>{{post.date|date:'F jS Y'}}</h3> 
     <div class="row my-4 text-center cards-row">
+      <h2>{{post.title}}</h2>
       <div class="col-md-8 ">
         <div class="card-inner">
           <div class="card-front card">
-            <img src="{{ image.image.url }}" alt="{{ post.title }}" class="img-fluid"/>    
+              <img src="{{post.imgs.url}}" alt="{{post.title}}" class="img-fluid"/>   
           </div>
         </div>
-        <h3>{{ image.caption }}</h3>
+      <h3>{{post.description|safe}}</h3>
       </div>
     </div>
-  </div>
+
+    {% for image in post.images.all %}
+    <div class="container  my-4 text-center fst-italic">
+      <div class="row my-4 text-center cards-row">
+        <div class="col-md-8 ">
+          <div class="card-inner">
+            <div class="card-front card">
+              <img src="{{ image.image.url }}" alt="{{ post.title }}" class="img-fluid"/>    
+            </div>
+          </div>
+          <h3>{{ image.caption }}</h3>
+        </div>
+      </div>
+    </div>
   {% endfor %}
+  </div>
 </div>
 {% endblock %}

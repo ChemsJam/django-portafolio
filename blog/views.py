@@ -3,7 +3,7 @@ from .models import Post
 # Create your views here.
 
 def render_posts(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-date')
     return render(request, 'post.html',{
         'posts': posts
     })

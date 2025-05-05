@@ -6,7 +6,7 @@ from workexpirence.models import WorkExpirence
 # Create your views here.
 def home(request):
     projects = Projects.objects.all()
-    certificates = Certificate.objects.all()
+    certificates = Certificate.objects.all().order_by('date')
     workexpirence = WorkExpirence.objects.all()
     
     return render(request, 'home.html',{
