@@ -16,8 +16,7 @@ html {
 
 /* Body */
 body {
-    background-color: #07182e; /* Fondo principal */
-    color: #edfaff; /* Texto principal */
+    background-color: #ffffff; /* Fondo principal */
 }
 
 /* Títulos */
@@ -60,8 +59,7 @@ h2, h3 {
 
 /* Contenedor principal */
 .container {
-    background-color: #99ddff; /* Fondo claro */
-    color: #660099; /* Texto oscuro */
+    background-color: #07182e; /* Fondo claro */
     border-radius: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -75,7 +73,7 @@ h2, h3 {
     margin-bottom: 20px;   
     margin-left: 40px; /* Espaciado a la izquierda */
     margin-right: 40px; /* Espaciado a la derecha */
-    color: #640564;
+    color: #99ddff;
 }
 
 .row ul li {
@@ -149,15 +147,13 @@ footer {
     padding: 1rem;
     margin: 0;
     background-color: #99ddff; /* Fondo de las cartas */
-    border: 2px solid #00b7ff; /* Bordes vibrantes */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
     position: relative;
     z-index: 5;
     margin: 0px;
-    padding: 0px;
+    padding: 2px;
     width: 100%;
     height: auto;
     display: block;
@@ -168,13 +164,13 @@ footer {
 }
 
 .card h2 {
-    color: #99ddff; /* Títulos oscuros */
+    color: #660099; /* Títulos oscuros */
 }
 
 .card p {
     position: relative;
     z-index: 3;
-    color: #99ddff; /* Texto oscuro */
+    color: #660099; /* Texto oscuro */
     text-align: center;
 }
 
@@ -222,8 +218,8 @@ footer {
 .card::after {
     content: "";
     position: absolute;
-    background: #07182E;
-    inset: 5px;
+    background: #99ddff;
+    inset: 10px;
     border-radius: 15px;
     z-index: 2;
 }
@@ -252,6 +248,7 @@ footer {
     margin: 0rem; /* Espaciado entre las tecnologías */
     text-align: center; /* Centra el texto debajo del icono */
     width: auto; /* Asegura que no ocupen toda la fila */
+    padding: 9px;
 }
 
 /* Estilo para los iconos */
@@ -264,7 +261,7 @@ footer {
 .card li span {
     position: relative;
     z-index: 3;
-    color: #4ac8ff; /* Texto oscuro */
+    color: #660099; /* Texto oscuro */
     text-decoration: none;
     display: block;
     align-items: center;
@@ -367,5 +364,5 @@ footer {
     background-color: #00b7ff;
     color: #edfaff;
     transform: rotateY(180deg);
-    z-index: 1;
+    z-index: 2;
   }

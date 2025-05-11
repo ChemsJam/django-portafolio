@@ -10,7 +10,7 @@ class Projects(models.Model):
     title = CharField(max_length=100)
     description = models.TextField()
     technologies = models.ManyToManyField(Technology, related_name="all_technologies_projects")
-    image = ImageField(upload_to='portfolio/images')
+    image = ImageField(upload_to='portfolio/images/projects')
     url = URLField(blank=True)
     isPortfolio = models.BooleanField(default=False)
 
