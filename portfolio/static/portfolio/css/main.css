@@ -60,7 +60,7 @@ h2, h3 {
 /* Contenedor principal */
 .container {
     background-color: #07182e; /* Fondo claro */
-    border-radius: 15px;
+    border-radius: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
