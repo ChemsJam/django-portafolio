@@ -146,6 +146,6 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'portfolio/static')
 ]
 
-ALLOWED_HOSTS = ['127.0.0.1', 'django-portafolio-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'django-portafolio-production.up.railway.app','portfolio.alexdev.digital']
 
 CSRF_TRUSTED_ORIGINS = ['http://*','https://django-portafolio-production.up.railway.app']
