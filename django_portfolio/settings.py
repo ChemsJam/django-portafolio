@@ -83,14 +83,6 @@ WSGI_APPLICATION = 'django_portfolio.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-    #'default': {
-    #            'ENGINE': 'django.db.backends.postgresql',
-    #            'NAME': 'django_portfolio',
-    #            'USER': 'postgres',
-    #            'PASSWORD': 'Soyjohan123.',
-    #            'HOST': 'localhost',
-    #            'PORT': '5432'
-    #        }
 }
 
 
@@ -146,6 +138,6 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'portfolio/static')
 ]
 
-ALLOWED_HOSTS = ['127.0.0.1', 'django-portafolio-production.up.railway.app','portfolio.alexdev.digital']
+ALLOWED_HOSTS = ['127.0.0.1', 'django-portafolio-production.up.railway.app','portfolio.alexdev.digital', 'https://portfolio.alexdev.digital']
 
-CSRF_TRUSTED_ORIGINS = ['http://*','https://django-portafolio-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['http://*','https://django-portafolio-production.up.railway.app','https://portfolio.alexdev.digital']
